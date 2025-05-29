@@ -9,31 +9,8 @@ BRIGHT_BLUE    = "\033[94m"
 BRIGHT_MAGENTA = "\033[95m"
 BRIGHT_CYAN    = "\033[96m"
 BRIGHT_WHITE   = "\033[97m"
- 
-import random\
- 
-def begining():
-    choice_1=input(RED + "Are you ready to play the game!? (N/Y) --> " + RESET).upper()
-    if choice_1 == "y".upper():
-        Run()
-    elif choice_1 == "n".upper():
-        print("Okay, bye")
-    else:
-        print("Not what I asked for...")
- 
-def Run():
-    chosenNum = random.randint(1, 100)
-    for i in range(6):
-        imp = int(input(BRIGHT_GREEN+'pick a number: '+RESET))
-        if imp > chosenNum:
-            print(BRIGHT_YELLOW+'Go Lower!'+RESET)
-        elif imp < chosenNum:
-            print(BRIGHT_CYAN+'Go Higher!'+RESET)
-        else:
-            print(BRIGHT_MAGENTA+'GOOD JOB'+ RESET)
-            return
-        if i + 1 == 6: print(BRIGHT_RED+'You Failed...'+RESET)
- 
+import random
+import sys
  
  
 def welcome():
@@ -45,6 +22,40 @@ def welcome():
     print("")
  
     resident_num = (floor_num*2) + app_num
+ 
+    # Filled Appartments
+    app_taken = random.randint(1, 100)
+    app_taken2 = random.randint(1, 100)
+    app_taken3 = random.randint(1, 100)
+    app_taken4 = random.randint(1, 100)
+    app_taken5 = random.randint(1, 100)
+    app_taken6= random.randint(1, 100)
+    app_taken7 = random.randint(1, 100)
+    app_taken8 = random.randint(1, 100)
+    if app_num == app_taken:
+        print("Sorry appartment filled, look again.")
+        sys.exit()
+    if app_num == app_taken2:
+        print("Sorry appartment filled, look again.")
+        sys.exit()
+    if app_num == app_taken3:
+        print("Sorry appartment filled, look again.")
+        sys.exit()
+    if app_num == app_taken4:
+        print("Sorry appartment filled, look again.")
+        sys.exit()
+    if app_num == app_taken5:
+        print("Sorry appartment filled, look again.")
+        sys.exit()
+    if app_num == app_taken6:
+        print("Sorry appartment filled, look again.")
+        sys.exit()
+    if app_num == app_taken7:
+        print("Sorry appartment filled, look again.")
+        sys.exit()
+    if app_num == app_taken8:
+        print("Sorry appartment filled, look again.")
+        sys.exit()
  
     if app_num > 625:
        app_num = "We don't have that mamy appartments on that floor, please redo order"
@@ -76,3 +87,29 @@ def welcome():
        print("Not a valid input, but if you want to stay here you can play the guessing game...")
  
 welcome()
+ 
+ 
+ 
+def begining():
+    choice_1=input(RED + "Are you ready to play the game!? (N/Y) --> " + RESET).upper()
+    if choice_1 == "y".upper():
+        Run()
+    elif choice_1 == "n".upper():
+        print("Okay, bye")
+    else:
+        print("Not what I asked for...")
+ 
+def Run():
+    chosenNum = random.randint(1, 100)
+    for i in range(6):
+        imp = int(input(BRIGHT_GREEN+'pick a number: '+RESET))
+        if imp > chosenNum:
+            print(BRIGHT_YELLOW+'Go Lower!'+RESET)
+        elif imp < chosenNum:
+            print(BRIGHT_CYAN+'Go Higher!'+RESET)
+        else:
+            print(BRIGHT_MAGENTA+'GOOD JOB'+ RESET)
+            return
+        if i + 1 == 6: print(BRIGHT_RED+'You Failed...'+RESET)
+ 
+ 
